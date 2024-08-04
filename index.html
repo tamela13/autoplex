@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="stylesA.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Your navigation links here -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Our Work</a></li>
+            <li><a href="https://kitsapdetails.com/">Kitsap Details</a></li>
+            <li><a href="https://www.jerrysautorebuild.com/">Jerry's Auto Rebuild</a></li>
+        </ul>
+    </nav>
+    
+    <div class="h2-container">
+        <h1>Kitsap Autoplex</h1>
+    </div>
+    
+    <div class="container">
+        <div class="background-image"></div>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h2>Services</h2>
+            
+            <div class="service">
+                <h3 data-target="detailing">Auto Detailing</h3>
+                <p class="service-content" id="detailing">We offer a variety of details to meet your needs. Complete, interior, exterior, or express wash.</p>
+            </div>
+            <div class="service">
+                <h3 data-target="windshield">Glass & Windshield Repair</h3>
+                <p class="service-content" id="windshield">If your windshield is cracked or chipped we can fix it!</p>
+            </div>
+            <div class="service">
+                <h3 data-target="gift">Window Tinting</h3>
+                <p class="service-content" id="gift">We have variety of tinting options.</p>
+            </div>
+            <div class="service">
+                <h3 data-target="intoxalock">Ignition Interlock Device</h3>
+                <p class="service-content" id="intoxalock">We offer Smart Start and Intoxlock to help you get back on the road after an alcohol-related driving offense.</p>
+            </div>
+            <div class="service">
+                <h3 data-target="stereo">Stereo Installation</h3>
+                <p class="service-content" id="stereo">Coming soon to our shop!</p>
+            </div>
+            <div class="service">
+                <h3 data-target="uhaul"/h3>Uhaul Rentals</h3>
+                <p class="service-content" id="uhaul">Call us and see what is available</p>
+            </div>
+            <div class="service">
+                    <h3 data-target="client">Autobody Estimates  and Repair</h3>
+                    <p class="service-content" id="client"><a href="https://www.jerrysautorebuild.com/">Take me to Jerry's Auto Rebuild</a></p>
+                </div>
+                
+            
+    </section>
+         <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceHeaders = document.querySelectorAll('.service h3, .offers h3');
+            
+            serviceHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const serviceBox = this.parentElement;
+
+                    if (content.classList.contains('show')) {
+                        content.classList.remove('show'); // Hide the content if it's currently shown
+                        serviceBox.style.height = '120px'; // Collapse the service box
+                    } else {
+                        content.classList.add('show'); // Show the content if it's currently hidden
+                        serviceBox.style.height = 'auto'; // Expand the service box to fit content
+                        setTimeout(() => {
+                            serviceBox.style.height = `${serviceBox.scrollHeight}px`; // Adjust height to fit content
+                        }, 300); // Wait for max-height transition to finish
+                    }
+                });
+            });
+        });
+    </script>
+        
+        
+        
+        <div class="h2-container">
+            <div class="side-box left-box">Gift Cards Available </div>
+            <div class="contact-info">
+                <address>
+                    <p>Location:</p>
+                    <p>24444 State Highway 3, Poulsbo, WA, United States, 98370</p>
+                </address>
+                <p>Phone: <a href="tel:+3605091413">360-509-1413</a></p>
+                <p>Email: <a href="mailto:Jerryskitsapautoplex@outlook.com">Jerryskitsapautoplex@outlook.com</a></p>
+                <a href="https://www.facebook.com/kitsapautoplex" class="button">Autoplex Facebook</a>
+            </div>
+            <div class="side-box right-box">Client Shuttle Services Available</div>
+        </div>
+        
+
+</body>
+</html>
