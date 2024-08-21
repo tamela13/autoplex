@@ -8,12 +8,16 @@
     z-index: 1000; /* Ensure the navbar appears above other elements */
     text-align: center; /* Center the text */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better visibility */
+    
 }
 
 .navbar ul {
     list-style-type: none; /* Remove default list styles */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
+    box-sizing: border-box;
+    text-align: center;
+    overflow: visible; /* Hide overflow content */
 }
 
 .navbar ul li a {
@@ -25,18 +29,14 @@
     color: #000; /* Change color on hover */
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
 .navbar ul li {
     display: inline-block;
     margin-right: 20px;
-    font-size: 30px;
+    font-size: 26px;
     color: rgb(232, 225, 225); /* Change the color of the navigation items */
     font-family: Arial, sans-serif; /* Specify the font family */
     font-weight: bold; /* Optionally, specify font weight */
+    
 }
 .contact-info {
     font-family: 'Arial';
@@ -143,8 +143,6 @@ h2 {
     margin-left: 680px; /* Adjust the margin as needed */
 }
 
-
-
 h3 {
     font-size: 1.3em;
     padding: 5px;
@@ -226,12 +224,9 @@ h3 {
 }
 
 
-
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    .navbar ul li {
-        font-size: 28px; /* Decrease font size for smaller screens */
-    }
+    
     
     .services {
         padding: 10px; /* Further decrease padding for smaller screens */
@@ -244,20 +239,44 @@ h3 {
         h2 {
             font-size: 2em; /* Adjust font size for smaller screens */
             padding: 15px;
+            
         }
     }
-
-
     
     .h2-container {
         flex-direction: column; /* Stack elements vertically on smaller screens */
         align-items: center;
-    }
+        padding: 3px;
 
+        h1 {
+
+            margin-top: 150px;
+        }
+    }
+    
     h2 {
         font-size: 3em; /* Adjust font size for smaller screens */
-        padding: 5px;
+        padding: 1px;
+    }
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack the list items vertically */
+        padding: 0;
     }
 
+    .navbar ul li {
+        display: block; /* Change list items to block to stack vertically */
+        margin-right: 0;
+        margin-bottom: 1px;
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .navbar ul li a {
+        padding: 1px 0; /* Add padding for better spacing */
+        display: block; /* Ensure links take up full width */
+        width: 50%; /* Make sure links span the full width of the navbar */
+    }
+}
 
 
